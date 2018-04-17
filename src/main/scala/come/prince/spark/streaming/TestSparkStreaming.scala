@@ -22,7 +22,7 @@ object TestSparkStreaming {
 
   def main(args: Array[String]): Unit = {
 
-    val spark = SparkSession.builder.appName("KafkaWriteRedis").master("spark://master1.hadoop:7077").getOrCreate()
+    val spark = SparkSession.builder.appName("KafkaWriteRedis").master("local[*]").getOrCreate()
     val sparkContext = spark.sparkContext
     val ssc = new StreamingContext(sparkContext, Seconds(1))
 
