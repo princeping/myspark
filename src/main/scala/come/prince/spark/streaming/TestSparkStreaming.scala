@@ -128,7 +128,7 @@ object TestSparkStreaming {
       messages.map(_.value()).flatMap(parseLog).collect()
     }
 
-    //解析每条日志，生成MyRecord
+    //解析每条日志，生成 MyRecord
     def parseLog(line: String): Option[MyRecord] = {
       val array: Array[String] = line.split("\\|", -1)
       try {
